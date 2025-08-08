@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Zeno's Paradox – Achilles & Tortoise</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<header class="app-header">
+    <h1>Zeno's Paradox <span>Achilles & the Tortoise</span></h1>
+    <p class="subtitle">
+        Aquiles persegue a tartaruga. Sempre que alcança onde ela estava, ela já andou um pouco.
+        Os <strong>marcadores</strong> indicam esses pontos “infinitos”.
+    </p>
+</header>
+
+<main class="app">
+    <section class="stage">
+        <canvas id="zenoCanvas" width="1000" height="260" aria-label="Race track"></canvas>
+        <div class="legend">
+            <div class="dot dot-a"></div><span>Achilles (A)</span>
+            <div class="dot dot-t"></div><span>Tortoise (T)</span>
+            <div class="dot dot-m"></div><span>Paradox markers</span>
+        </div>
+    </section>
+
+    <section class="panel">
+        <div class="controls">
+            <div class="control">
+                <label for="lead">Initial Lead (px): <output id="leadOut">200</output></label>
+                <input id="lead" type="range" min="20" max="400" value="200" step="10"/>
+            </div>
+
+            <div class="control">
+                <label for="vA">Achilles Speed (px/s): <output id="vAOut">120</output></label>
+                <input id="vA" type="range" min="40" max="400" value="120" step="10"/>
+            </div>
+
+            <div class="control">
+                <label for="vT">Tortoise Speed (px/s): <output id="vTOut">60</output></label>
+                <input id="vT" type="range" min="10" max="300" value="60" step="10"/>
+            </div>
+
+            <div class="control inline">
+                <label class="checkbox"><input id="markersToggle" type="checkbox" checked/> Show markers</label>
+                <label class="checkbox"><input id="trailToggle" type="checkbox" checked/> Show trails</label>
+            </div>
+
+            <div class="buttons">
+                <button id="startBtn" class="btn primary">Start</button>
+                <button id="pauseBtn" class="btn">Pause</button>
+                <button id="resetBtn" class="btn danger">Reset</button>
+            </div>
+        </div>
+
+        <div class="readout">
+            <div><span>Time</span><strong id="timeOut">0.00s</strong></div>
+            <div><span>Distance A</span><strong id="aOut">0 px</strong></div>
+            <div><span>Distance T</span><strong id="tOut">0 px</strong></div>
+            <div><span>Markers</span><strong id="mOut">0</strong></div>
+        </div>
+    </section>
+</main>
+
+<script src="./script.js" defer></script>
+
+</body>
+</html>
