@@ -1,0 +1,28 @@
+## 📄 .gitignore
+```gitignore
+# Node modules
+node_modules/
+
+# Build output
+dist/
+dist-*/
+build/
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+*.cache
+.cache/
+.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# TypeScript build info
+*.tsbuildinfo
